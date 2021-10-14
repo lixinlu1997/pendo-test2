@@ -11,17 +11,19 @@
 
             // Call this whenever information about your visitors becomes available
             // Please use Strings, Numbers, or Bools for value types.
-            pendo.initialize({
-                visitor: {
-                    id:1,
-                    first_name:'',
-                    last_name:'',
-                    subcode:'COM'
-                },
-                account: {
-                    id:11
-                }
-            });
+            for (let i = 0; i < 50; i++) {
+                pendo.initialize({
+                    visitor: {
+                        id:i,
+                        first_name:'firstname'+i,
+                        last_name:'lastname'+i,
+                        subcode:'COM'
+                    },
+                    account: {
+                        id:'xinlu-account'
+                    }
+                });
+            }
     })('6d033598-202e-46cd-57c3-88f3ade7a676');
     </script>
 </header>
