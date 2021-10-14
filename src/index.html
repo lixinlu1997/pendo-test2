@@ -2,6 +2,11 @@
 <html>
 <header>
     <script>
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
     (function(apiKey){
         (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
         v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
@@ -11,19 +16,19 @@
 
             // Call this whenever information about your visitors becomes available
             // Please use Strings, Numbers, or Bools for value types.
-            for (let i = 0; i < 50; i++) {
-                pendo.initialize({
-                    visitor: {
-                        id:'example'+i,
-                        first_name:'firstname'+i,
-                        last_name:'lastname'+i,
-                        subcode:'COM'
-                    },
-                    account: {
-                        id:'xinlu-account'
-                    }
-                });
-            }
+            var id_rand = getRandomInt(1, 10);
+            pendo.initialize({
+                visitor: {
+                    id:'example'+id_rand,
+                    first_name:'firstname'+id_rand,
+                    last_name:'lastname'+id_rand,
+                    subcode:'COM'
+                },
+                account: {
+                    id:'xinlu-account'
+                }
+            });
+
     })('2b1fd049-7787-4b7f-5b19-ccffabc100fb');
     </script>
 </header>
