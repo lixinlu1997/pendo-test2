@@ -18,6 +18,7 @@
             // Call this whenever information about your visitors becomes available
             // Please use Strings, Numbers, or Bools for value types.
             var id_rand = Date.now() % 1000000;
+            console.log(id_rand);
             pendo.initialize({
                 visitor: {
                     id:'example'+id_rand,
