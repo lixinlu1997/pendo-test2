@@ -2,7 +2,45 @@
 <html>
 <header>
     <script>
-    setTimeout('document.location.reload();', 300);
+    function setCookie(cname, cvalue, time) {
+        var d = new Date();
+        d.setTime(d.getTime() + time);
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+    function getCookie(name) {
+        var dc = document.cookie;
+        var prefix = name + "=";
+        var begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+            begin = dc.indexOf(prefix);
+            if (begin != 0) return null;
+        }
+        else
+        {
+            begin += 2;
+            var end = document.cookie.indexOf(";", begin);
+            if (end == -1) {
+            end = dc.length;
+            }
+        }
+        return decodeURI(dc.substring(begin + prefix.length, end));
+    } 
+
+    function increment() {
+        var myCookie = getCookie("refreshCount");
+
+        if (myCookie == null) {
+            setCookie("refreshCount",0,30);
+        }
+        else {
+            setCookie("refreshCount",myCookie+1,30);
+        }
+    }        
+    
+    increment();
+    var myCookie = getCookie("refreshCount");
+    console.log(myCookie);
     (function(apiKey){
         (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
         v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
