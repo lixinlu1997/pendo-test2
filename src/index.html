@@ -25,7 +25,8 @@
     
     var count = getCookie("count");
     if (count == null) {
-        setCookie("count",1,1800000000);
+        console.log("NULL");
+        setCookie("count",parseInt("0"),1800000000);
     } else {
         setCookie("count",parseInt(count)+1,1800000000);
     }
