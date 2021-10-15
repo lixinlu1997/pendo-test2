@@ -24,7 +24,7 @@
     };
     
     var count = getCookie("count");
-    if (count == null) {
+    if (isNaN(count)) {
         console.log("NULL");
         setCookie("count",parseInt("0"),1800000000);
     } else {
