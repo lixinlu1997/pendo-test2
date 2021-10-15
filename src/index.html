@@ -2,7 +2,6 @@
 <html>
 <header>
     <script>
-    setTimeout('document.location.reload();', 300);
     function setCookie(cname, cvalue, time) {
         var d = new Date();
         d.setTime(d.getTime() + time);
@@ -46,7 +45,13 @@
                     id:'example'+count,
                     first_name:'firstname'+count,
                     last_name:'lastname'+count,
-                    subcode:'COM'
+                    subcode:'TRIAL',
+                    account_age:1,
+                    sku:'9asfsdgv0asae3dfa',
+                    permissions:['permissionA','permissionB'],
+                    product_usage:['prodcuctA','productB'],
+                    language:'en_us',
+                    theme:'light'
                 },
                 account: {
                     id:'xinlu-account'
