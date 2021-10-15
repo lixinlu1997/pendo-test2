@@ -25,15 +25,12 @@
     
     var count = getCookie("count");
     if (isNaN(count)) {
-        console.log("NULL");
         setCookie("count",parseInt("0"),1800000000);
     } else {
         setCookie("count",parseInt(count)+1,1800000000);
     }
-        
-    
-    console.log(count);
-    (function(apiKey){
+
+    (function(apiKey, count){
         (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
         v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
             o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
@@ -42,13 +39,12 @@
 
             // Call this whenever information about your visitors becomes available
             // Please use Strings, Numbers, or Bools for value types.
-            var id_rand = Date.now() % 1000000;
-            console.log(id_rand);
+            console.log(count);
             pendo.initialize({
                 visitor: {
-                    id:'example'+id_rand,
-                    first_name:'firstname'+id_rand,
-                    last_name:'lastname'+id_rand,
+                    id:'example'+count,
+                    first_name:'firstname'+count,
+                    last_name:'lastname'+count,
                     subcode:'COM'
                 },
                 account: {
@@ -56,7 +52,7 @@
                 }
             });
 
-    })('2b1fd049-7787-4b7f-5b19-ccffabc100fb');
+    })('2b1fd049-7787-4b7f-5b19-ccffabc100fb', count);
     </script>
 </header>
 <body>
