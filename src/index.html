@@ -42,6 +42,17 @@
             // Please use Strings, Numbers, or Bools for value types.
             console.log(count);
             pendo.initialize({
+                visitor: {
+                    id:'example1',
+                    first_name:'ass'+count,
+                    last_name:'last'+count,
+                    subcode:'COM',
+                    account_age:1,
+                    sku:'9asfsdgv0asae3dfa',
+                    permissions:['permissionA','permissionB'],
+                    product_usage:['prodcuctA','productB'],
+                    language:'en_us',
+                },
                 account: {
                     id:'xinlu-account-insight4all'
                 }
